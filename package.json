@@ -29,7 +29,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./src/**",
-    "dev": "jest --watch",
+    "dev": "jest --watchAll",
     "test": "jest",
     "coverage": "npm run test -- --coverage",
     "ci": "npm run lint && npm run coverage",

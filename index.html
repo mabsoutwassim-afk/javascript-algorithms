@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Algorithms Interactive Playground</title>
+  <link rel="stylesheet" href="/src/ui/styles.css" />
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-title">
+        <span class="logo-icon">⚡</span>
+        <h1>JavaScript Algorithms & Data Structures</h1>
+      </div>
+      <div class="search-box">
+        <input type="text" id="algorithm-search" placeholder="Search algorithms (e.g., QuickSort, Dijkstra, Factorial)..." />
+      </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <div class="main-layout">
+      <!-- Sidebar / Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h3>Categories</h3>
+        </div>
+        <ul id="category-list" class="category-list">
+          <!-- Dynamically populated -->
+        </ul>
+
+        <div class="sidebar-header" style="margin-top: 1.5rem;">
+          <h3>Algorithms</h3>
+          <span id="algo-count" class="count-badge">0</span>
+        </div>
+        <ul id="algorithm-list" class="algorithm-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </aside>
+
+      <!-- Center Panel: Algorithm Configurator & Controls -->
+      <main class="content-panel">
+        <div id="algorithm-detail" class="algorithm-detail">
+          <div class="detail-header">
+            <span id="detail-category" class="category-tag">Category</span>
+            <h2 id="detail-title">Select an Algorithm</h2>
+          </div>
+          <p id="detail-description" class="description-text">
+            Choose an algorithm from the sidebar or search above to view its parameters and run it interactively.
+          </p>
+
+          <!-- Dynamic Preset Buttons -->
+          <div id="presets-container" class="presets-container" style="display: none;">
+            <label class="presets-label">Presets / Examples:</label>
+            <div id="preset-buttons" class="preset-buttons"></div>
+          </div>
+
+          <!-- Dynamic Form Inputs -->
+          <form id="algorithm-form" class="algorithm-form">
+            <div id="inputs-container" class="inputs-container">
+              <!-- Inputs generated dynamically -->
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="run-button" class="btn btn-primary btn-run">
+                <span class="btn-icon">▶</span> Run Algorithm
+              </button>
+              <button type="button" id="reset-inputs-btn" class="btn btn-secondary">
+                Reset Inputs
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Output / Interaction Window -->
+        <section class="interaction-section">
+          <div class="interaction-header">
+            <div class="window-controls">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="window-title">Interaction Window & Output Console</span>
+            </div>
+            <div class="interaction-actions">
+              <span id="execution-time" class="time-badge" style="display: none;">0 ms</span>
+              <button id="copy-log-btn" class="btn-icon-only" title="Copy Log">📋 Copy</button>
+              <button id="clear-log-btn" class="btn-icon-only" title="Clear Console">🧹 Clear</button>
+            </div>
+          </div>
+
+          <div id="interaction-window" class="interaction-window">
+            <div class="log-entry system-msg">
+              <span class="log-time">[System]</span> Interactive console ready. Select an algorithm and click "Run Algorithm" to observe execution logs, steps, and results.
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/src/ui/app.js"></script>
+</body>
+</html>
